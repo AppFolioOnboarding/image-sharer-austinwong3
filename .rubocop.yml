@@ -1,3 +1,5 @@
+require: rubocop-rails
+
 AllCops:
   Exclude:
     - 'db/schema.rb'
@@ -22,6 +24,12 @@ Metrics/LineLength:
 
 Rails:
   Enabled: true
+
+Rails/SkipsModelValidations:
+  Whitelist:
+    - touch
+    - toggle
+    - toggle!
 
 Style/Documentation:
   Enabled: false
