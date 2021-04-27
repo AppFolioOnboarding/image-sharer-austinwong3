@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -22,6 +22,8 @@ gem 'webpacker', '~> 4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rubocop', '~> 0.82.0'
+  gem 'rubocop-rails', '~> 2.5.2'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
