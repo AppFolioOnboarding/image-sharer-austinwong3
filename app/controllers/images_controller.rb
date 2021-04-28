@@ -3,6 +3,10 @@ class ImagesController < ApplicationController
     @images = Image.all
   end
 
+  def show
+    @image = Image.find(params[:id])
+  end
+
   def new
     @image = Image.new
   end
@@ -11,7 +15,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      redirect_to :images
+      redirect_to @image
     else
       render :new
     end
