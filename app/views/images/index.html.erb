@@ -1,0 +1,7 @@
+<h1>Images</h1>
+<%=link_to "Add Image", new_image_path%>
+<ul>
+  <% @images.each do |image| %>
+    <%= image_tag(image.url) %><br>
+  <% end %>
+</ul>
