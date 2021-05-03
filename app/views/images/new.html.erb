@@ -1,6 +1,9 @@
-<h1>Add Image</h1>
-
-<%= simple_form_for @image do |f|%>
-  <%= f.input :url%>
-  <%= f.button :submit%>
-<% end %>
+<h1 class='d-flex justify-content-center'>Add Image</h1>
+<div class='d-flex flex-column align-items-center'>
+  <%= simple_form_for @image do |f| %>
+    <div class='d-flex flex-column align-items-center'>
+      <%= f.input :url%>
+      <%= f.button :submit%>
+    </div>
+  <% end %>
+</div>
