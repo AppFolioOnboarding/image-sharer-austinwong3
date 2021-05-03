@@ -10,8 +10,8 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     get images_path
 
     assert_select 'img', 2 do |images|
-      assert_equal @image.url, images.first.attributes['src'].value
-      assert_equal @image2.url, images.last.attributes['src'].value
+      assert_equal @image2.url, images.first.attributes['src'].value
+      assert_equal @image.url, images.last.attributes['src'].value
     end
     assert_response :ok
   end

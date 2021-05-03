@@ -2,6 +2,6 @@
 <%=link_to "Add Image", new_image_path%>
 <ul>
   <% @images.each do |image| %>
-    <%= image_tag(image.url) %><br>
+    <%= image_tag(image.url, class: 'img_list__img--med-size') %><br>
   <% end %>
 </ul>
