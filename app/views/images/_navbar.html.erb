@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand navbar-light bg-faded w-100">
+  <%= link_to 'Austin\'s Super Cool Image Sharer', root_path, class: "navbar-brand" %>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <% nav_items= [['Home', root_path], ['Add Image', new_image_path]] %>
+      <% nav_items.each do |item| %>
+        <li class="nav-item <%= current_page?(item[1]) ? 'active' : nil %>">
+          <%= link_to item[1], class: "nav-link" do %>
+            <%= item[0] %><span class="sr-only"><%= current_page?(item[1]) ? '(current)' : nil %></span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
