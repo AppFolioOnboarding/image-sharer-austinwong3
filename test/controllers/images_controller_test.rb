@@ -66,4 +66,12 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
 
     assert_template :new
   end
+
+  def test_destroy
+    assert_difference('Image.count', -1) do
+      delete image_path(@image.id)
+    end
+
+    assert_redirected_to root_path
+  end
 end
