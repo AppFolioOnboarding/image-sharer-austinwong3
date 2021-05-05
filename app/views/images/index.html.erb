@@ -5,7 +5,13 @@
   <% @images.each do |image| %>
     <div class= 'd-flex align-items-center'>
       <%= image_tag(image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px') %><br>
-      <p class='m-2'> Tags: <%= raw image.tag_list.map { |tag| link_to tag, tag_path(tag) }.join(', ') %> 
+      <div class= 'd-flex flex-column'>
+        <p class='m-2'> Tags: <%= raw image.tag_list.map { |tag| link_to tag, tag_path(tag) }.join(', ') %></p>
+        <%= link_to "Delete", image_path(image),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: 'm-2' %>
+      </div>
     </div>
   <% end %>
 </ul>
