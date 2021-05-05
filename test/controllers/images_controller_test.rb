@@ -25,6 +25,22 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :ok
   end
 
+  def test_tag
+    get tag_path(@image.tag_list[0])
+
+    assert_select 'img', 1 do |images|
+      assert_equal @image.url, images.first.attributes['src'].value
+    end
+    assert_response :ok
+  end
+
+  def test_nonexistent_tag
+    get tag_path('fake')
+
+    assert_select 'img', false
+    assert_response :ok
+  end
+
   def test_new
     get new_image_path
 
