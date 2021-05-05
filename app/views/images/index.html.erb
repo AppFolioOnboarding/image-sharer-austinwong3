@@ -1,7 +1,8 @@
-<h1>Images</h1>
-<%=link_to "Add Image", new_image_path%>
-<ul>
+<h1 class='d-flex justify-content-center'>Images</h1>
+
+<%=link_to "Add Image", new_image_path, class: 'btn btn-primary my-3'%>
+<ul class='p-0'>
   <% @images.each do |image| %>
-    <%= image_tag(image.url, class: 'img_list__img--med-size') %><br>
+    <%= image_tag(image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px') %><br> 
   <% end %>
 </ul>
