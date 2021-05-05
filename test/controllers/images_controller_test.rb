@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ImagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @image = Image.create!(url: 'https://picsum.photos/id/237/200/300')
-    @image2 = Image.create!(url: 'https://picsum.photos/id/239/200/300')
+    @image = Image.create!(url: 'https://picsum.photos/id/237/200/300', tag_list: 'cool, nice')
+    @image2 = Image.create!(url: 'https://picsum.photos/id/239/200/300', tag_list: 'sky, nature')
   end
 
   def test_index
@@ -33,11 +33,12 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
 
   def test_create__succeed
     assert_difference('Image.count', 1) do
-      image_params = { url: 'https://picsum.photos/id/238/200/300' }
+      image_params = { url: 'https://picsum.photos/id/238/200/300', tag_list: 'cool, nice' }
       post images_path, params: { image: image_params }
     end
 
     assert_equal Image.last.url, 'https://picsum.photos/id/238/200/300'
+    assert_equal Image.last.tag_list, %w[cool nice]
     assert_redirected_to image_path(Image.last)
   end
 
