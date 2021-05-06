@@ -34,7 +34,7 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :ok
   end
 
-  def test_nonexistent_tag
+  def test_tag__nonexistent
     get tag_path('fake')
 
     assert_select 'img', false
