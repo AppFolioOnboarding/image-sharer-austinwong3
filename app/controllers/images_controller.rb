@@ -25,11 +25,11 @@ class ImagesController < ApplicationController
   end
 
   def edit
-    @image = Article.find(params[:id])
+    @image = Image.find(params[:id])
   end
 
   def update
-    @image = Article.find(params[:id])
+    @image = Image.find(params[:id])
 
     if @image.update(image_params)
       redirect_to @image

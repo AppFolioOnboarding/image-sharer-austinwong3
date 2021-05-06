@@ -1,0 +1,9 @@
+<div class='d-flex flex-column align-items-center'>
+  <%= simple_form_for @image do |f| %>
+    <div class='d-flex flex-column align-items-center'>
+      <%= f.input :url, disabled: action_name == 'edit' %>
+      <%= f.input :tag_list %>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
