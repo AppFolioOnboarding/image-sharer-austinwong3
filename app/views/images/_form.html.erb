@@ -2,7 +2,7 @@
   <%= simple_form_for @image do |f| %>
     <div class='d-flex flex-column align-items-center'>
       <%= f.input :url, disabled: action_name == 'edit' %>
-      <%= f.input :tag_list %>
+      <%= f.input :tag_list, input_html: { value: @image.tag_list.join(', ') } %>
       <%= f.button :submit %>
     </div>
   <% end %>
