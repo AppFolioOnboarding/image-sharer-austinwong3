@@ -67,6 +67,12 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_template :new
   end
 
+  def test_edit
+    get edit_image_path(@image.id)
+
+    assert_response :ok
+  end
+
   def test_update__succeed
     image_params = { url: 'https://picsum.photos/id/237/200/300', tag_list: 'awesome, rad' }
     put image_path(@image.id), params: { image: image_params }
