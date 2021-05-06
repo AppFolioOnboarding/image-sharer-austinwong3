@@ -1,2 +1,3 @@
 <%= image_tag(@image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px') %>
+<p><%= @image.tag_list.join(', ')%></p>
 <%=link_to "Return to Landing Page", images_path, class: 'btn btn-primary my-3'%><br>

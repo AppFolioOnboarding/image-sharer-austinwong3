@@ -3,6 +3,9 @@
 <%=link_to "Add Image", new_image_path, class: 'btn btn-primary my-3'%>
 <ul class='p-0'>
   <% @images.each do |image| %>
-    <%= image_tag(image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px') %><br> 
+    <div class= 'd-flex align-items-center'>
+      <%= image_tag(image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px') %><br>
+      <p class='m-2'>Tags: <%= image.tag_list.join(', ')%></p> 
+    </div>
   <% end %>
 </ul>
