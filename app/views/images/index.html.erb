@@ -1,11 +1,11 @@
 <h1 class='d-flex justify-content-center'>Images</h1>
 
 <%=link_to "Add Image", new_image_path, class: 'btn btn-primary my-3'%>
-<ul class='img'>
+<ul class='image-card'>
   <% @images.each do |image| %>
     <li class= 'img-thumbnail p-2 m-1'>
       <%= link_to image_tag(image.url, class: 'img-thumbnail p-2 m-1', style: 'max-width: 400px'), image_path(image) %><br>
-      <div class= 'tags'>
+      <div>
         <p class='m-2'> Tags: </p>
         <% image.tag_list.each do |tag| %>
             <%= link_to tag, root_path(tag: tag), class: 'badge badge-secondary m-2', id: 'tag' %>
